@@ -1,0 +1,10 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.tag_links {
+	background-color: #808080;
+	color: #ffffff;
+	padding:6px; 
+	margin:4px;;
+}

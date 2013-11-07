@@ -1,0 +1,27 @@
+<%= form_for(@tag) do |f| %>
+<!-- -->
+  <% if @tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+      <ul>
+      <% @tag.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" style="margin: 20px 0 20px 0">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+    <!-- Creating a text field for the title in the form for tag -->
+  </div>
+
+    <%= f.hidden_field :blog_id %>
+    <!-- -->
+
+  <div class="actions" style="margin: 20px 0 20px 0">
+    <%= f.submit :class => "submit_button"%>
+  </div>
+<% end %>

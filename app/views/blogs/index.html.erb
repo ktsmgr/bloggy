@@ -1,0 +1,52 @@
+<h1>My Blogs</h1>
+
+<!-- This added -->
+<div style="margin:30px 0px 30px 0px">
+  Tags: 
+  <% @tags.each do |tag|  %>
+      <%= link_to tag.title, {:controller => "blogs", :action => "index", :tag_title => tag.title}, :class => "tag_links" %>
+  <% end %>
+</div>
+
+<!-- Ends here 
+<span style="background-color:pink; padding:6px; margin:4px; color:white">
+-->
+<hr class="separator" >
+<div>
+  <% @blogs.each do |blog| %>
+    <div>
+      <h2><%= blog.title %></h2>
+      <div class="blog-title">
+        <%= blog.created_at.strftime ("%d %B %Y") %>
+      </div>
+      <div class="blog-title">
+        <%= time_ago_in_words(blog.created_at) %>
+      </div>
+      <br>
+      
+      <div class="blog-content">
+        <%= blog.content %>
+      </div>
+      <br>
+
+      <div>
+        <% blog.tags.each do |tag| %>
+          <%= link_to tag.title, {:controller => "blogs", :action => "index", :tag_title => tag.title}, :class => "tag_links" %>
+        <% end %>
+      </div>
+      <br>
+
+      <div class="blog-control">
+        <%= link_to 'Show', blog %>
+        <%= link_to 'Edit', edit_blog_path(blog) %>
+        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+    <hr class="separator" >
+  <% end %>
+</div>
+
+
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>

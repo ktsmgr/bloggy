@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Add a list of tags here -->
+<div style="margin:30px 0px 30px 0px">
+	Tags: 
+	<% @blog.tags.each do |tag|  %>
+		<%= link_to tag.title, tag, :class => 'tag_links' %>
+	<% end %>
+</div>
+
+<p style="padding-top:5px">
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @blog.content %>
+</p>
+
+
+<div style="padding:20px; background-color:beige; margin: 20px">
+	<% @comments.each do |comment| %>
+		<%= comment.content %> - By <%= comment.name %><br>
+	<% end %>
+</div>
+
+<div style="margin: 20px, 0px, 0px, 20px"><%= link_to "Add a comment", new_comment_path(:blog_id => @blog.id), :class => "submit_button" %>
+</div>
+
+<!-- Will be converted to the following:
+
+<a href=”/comments/new?blog_id=2”>Add a comment</a>
+-->
+
+<br>
+
+<div style="margin: 40px, 0px, 0px, 20px">
+	<%= link_to 'Edit', edit_blog_path(@blog) %> |
+	<%= link_to 'Back', blogs_path %>
+</div>
+
+<hr class="separator" >
+

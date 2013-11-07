@@ -1,0 +1,28 @@
+<h1>Editing blog</h1>
+
+<%= render 'form' %>
+<!-- This renders a partial form -->
+
+<div style="margin:0px 0px 0px 20px" >
+<%= link_to 'Show', @blog %> |
+<%= link_to 'Back', blogs_path %>
+</div>
+
+<hr class="separator" >
+<!-- This renders the add a tag link and form -->
+
+<div style="margin: 20px">
+	<h3>Add a tag</h3>
+	<%= render 'tags/form' %>
+</div>
+
+<hr class="separator" >
+
+<div style="margin:30px 0px 30px 0px" >
+	Tags: 
+	<% @blog.tags.each do |tag|  %>
+		<span style="background-color:black; padding:6px; margin:4px; color:white"><%= tag.title%>
+			<%= link_to 'x', tag, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</span>
+	<% end %>
+</div>

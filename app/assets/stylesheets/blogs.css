@@ -1,0 +1,10 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.separator {
+	width:100%; 
+	height:1px; 
+	background: #CCFFFF;
+	margin-top: 40px;
+}

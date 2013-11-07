@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @comment.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @comment.content %>
+</p>
+
+<!-- 
+<p>
+  <strong>Blog:</strong>
+  <%= @comment.blog_id %>
+</p>
+-->
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> | 
+<!-- :id => @comment.id) since @comment.id is run over and over, by convention, this code is shortened to (@comment). Can't just use @blog.id because id is still undefined during the edit process. But @comment.blog_id is defined and contains the blog id. We can use that instead.
+
+Removed this: 
+, :blog_id => @comment.blog_id) %> 
+After this:
+link_to 'Edit', edit_comment_path(@comment
+-->
+<%= link_to 'Back', comments_path %>

@@ -1,0 +1,29 @@
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" style="margin: 20px">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field" style="margin: 20px">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+  <%= f.hidden_field :blog_id, :value => @blog.id %>
+  </div>  
+  <!-- This This auto fills the value of the blog id into the new comment form. Use f.hidden_field and delete the label line to hide the field from view on the browser (still in html) -->
+  <div class="actions" style="margin: 20px">
+    <%= f.submit :class => "submit_button"%>
+  </div>
+<% end %>

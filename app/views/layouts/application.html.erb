@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Keala's Bloggy</title>
+
+
+  <!-- This code was copied from Twitter Bootstrap > Getting started < to enable Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> 
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> 
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
+
+	<!-- Twitter Bootstrap code ends here -->
+	
+
+	<link href='http://fonts.googleapis.com/css?family=Mystery+Quest' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+	<div id="header">
+		<%= image_tag "head_icon_quote1.png", :title => "Bloggy talking bubbles", :style => "width:70px" %>
+		<%= link_to "Bloggy", index_path, :class => "mystery_quest" %>
+		<div id="nav">
+			<%= link_to "BLOGS", blogs_path %>
+			<!-- link_to "NC", comments_path %> -->		
+			<%= link_to "ABOUT US", about_us_path %>
+			<%= link_to "OUR TEAM", our_team_path %>
+			<%= link_to "CONTACT US", contact_us_path %>
+			<%= link_to "VISION", company_vision_path %>
+			<%= link_to "TERMS", terms_path %>
+		</div>
+	</div>	
+
+	<div id="content">
+		<%= yield %>
+
+		<!--
+		This is where your code from main > about_us.html.erb goes
+			-->
+	</div>
+	
+	<div id="footer">Copyright © 2013 Xymone<br>
+	All rights reserved
+	</div>
+
+
+</body>
+
+</html>
