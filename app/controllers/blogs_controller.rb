@@ -19,7 +19,7 @@ class BlogsController < ApplicationController
     end
     @tags = Tag.select(:title).uniq
   end
-  #select(:title).uniq
+  #select(:title).uniq 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
