@@ -9,9 +9,11 @@ class BlogsController < ApplicationController
     #is the same as below
     if ! params[:tag_title].blank?
       tags = Tag.where(:title => params[:tag_title])
+      
       @blogs = []
       tags.each do |tag|
         parent_blog = tag.blog
+
         @blogs.push(parent_blog)
       end
     else

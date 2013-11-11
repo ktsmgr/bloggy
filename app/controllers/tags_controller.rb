@@ -28,6 +28,10 @@ class TagsController < ApplicationController
   # POST /tags.json
   def create
     @tag = Tag.new(tag_params)
+    @tag.title = @tag.title.downcase
+
+  tag_entries = params[:tag_title]    
+  tag_entries_array = tag_entries.split(',')
 
     respond_to do |format|
       if @tag.save

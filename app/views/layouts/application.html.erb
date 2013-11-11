@@ -7,37 +7,66 @@
 
   <!-- This code was copied from Twitter Bootstrap > Getting started < to enable Bootstrap -->
   <!-- Latest compiled and minified CSS -->
- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> 
+ <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> -->
+
+ <link rel="stylesheet" href="/assets/stylesheets/bootstrap.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> 
+<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
+
+<link rel="stylesheet" href="/assets/stylesheets/bootstrap-theme.css">
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
+<!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
 
 	<!-- Twitter Bootstrap code ends here -->
-	
 
-	<link href='http://fonts.googleapis.com/css?family=Mystery+Quest' rel='stylesheet' type='text/css'>
+	<!-- Mystery Quest font style starts here -->
+<link href='http://fonts.googleapis.com/css?family=Mystery+Quest' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <!-- Mystery Quest font style ends here -->
+
+
 </head>
 
 <body>
-	<div id="header">
-		<%= image_tag "head_icon_quote1.png", :title => "Bloggy talking bubbles", :style => "width:70px" %>
-		<%= link_to "Bloggy", index_path, :class => "mystery_quest" %>
-		<div id="nav">
-			<%= link_to "BLOGS", blogs_path %>
-			<!-- link_to "NC", comments_path %> -->		
-			<%= link_to "ABOUT US", about_us_path %>
-			<%= link_to "OUR TEAM", our_team_path %>
-			<%= link_to "CONTACT US", contact_us_path %>
-			<%= link_to "VISION", company_vision_path %>
-			<%= link_to "TERMS", terms_path %>
-		</div>
-	</div>	
+	<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div id="header" class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= image_tag "head_icon_quote1.png", :title => "Bloggy talking bubbles", :style => "width:70px" %>
+  			<%= link_to "Bloggy", index_path, :class => "mystery_quest" %>
+     	</div>
+
+     	<div id="nav_links" class="navbar-collapse collapse active">
+        <ul class="nav navbar-nav pull-right">
+          <li><%= link_to "BLOGS", blogs_path %></li>
+          
+          <li class="dropdown">
+            <a href="./about_us" class="dropdown-toggle" data-toggle="dropdown">ABOUT US <b class="caret"></b></a>
+            
+            <ul class="dropdown-menu">
+              <li><a href="./our_team">OUR TEAM</a></li>
+              <li><%= link_to "VISION", company_vision_path %></li>
+            </ul>
+
+          </li>
+    
+          <li><%= link_to "CONTACT US", contact_us_path %></li>
+
+          <li><%= link_to "TERMS", terms_path %></li>
+        </ul>
+  	  </div>
+
+    </div>
+  </div>
+	
 
 	<div id="content">
 		<%= yield %>
@@ -52,6 +81,7 @@
 	</div>
 
 
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="/assets/javascripts/bootstrap.js"></script>
 </body>
-
 </html>

@@ -20,12 +20,9 @@
         <%= blog.created_at.strftime ("%d %B %Y") %>
       </div>
       <div class="blog-title">
+        Posted
         <%= time_ago_in_words(blog.created_at) %>
-      </div>
-      <br>
-      
-      <div class="blog-content">
-        <%= blog.content %>
+        ago
       </div>
       <br>
 
@@ -36,11 +33,22 @@
       </div>
       <br>
 
-      <div class="blog-control">
-        <%= link_to 'Show', blog %>
-        <%= link_to 'Edit', edit_blog_path(blog) %>
-        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="blog-content">
+        <%= truncate blog.content, length: 350 %>
+        <%= link_to 'Read more', blog %>
       </div>
+      <br>
+
+
+      <div class="blog-control">
+        <button type="button" class="btn btn-warning blog_button" >
+          <%= link_to 'Edit', edit_blog_path(blog)%>
+        </button>
+        <button type="button" class="btn btn-danger">
+          <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </button>
+      </div>
+
     </div>
     <hr class="separator" >
   <% end %>

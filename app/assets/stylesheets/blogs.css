@@ -8,3 +8,9 @@
 	background: #CCFFFF;
 	margin-top: 40px;
 }
+
+.comment_block {
+	padding:40px 60px 40px 60px; 
+	background-color:beige; 
+	margin: 20px;
+}

@@ -20,3 +20,7 @@ $(document).ready(function () {
         $('#my_first_paragraph').slideToggle();
     });
 })
+
+$(".collapse").collapse()
+
+$('.dropdown-toggle').dropdown()

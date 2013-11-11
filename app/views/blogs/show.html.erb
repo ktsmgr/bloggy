@@ -9,19 +9,21 @@
 </div>
 
 <p style="padding-top:5px">
-  <strong>Title:</strong>
-  <%= @blog.title %>
+  <h2><%= @blog.title %></h2><br>
 </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @blog.content %>
+<p style="padding-bottom: 30px">
+  <%= @blog.content %><br>
 </p>
 
 
-<div style="padding:20px; background-color:beige; margin: 20px">
+<div class="comment_block">
 	<% @comments.each do |comment| %>
-		<%= comment.content %> - By <%= comment.name %><br>
+		<br>
+		<%= comment.content %><br>
+		Posted on <%= comment.created_at.strftime ("%d %B %Y") %><br>
+		Posted by <%= comment.name %>
+		<hr class="separator2" >
 	<% end %>
 </div>
 

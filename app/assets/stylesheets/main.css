@@ -45,3 +45,11 @@ button:hover, .submit_button:hover {
 	background-color: #FF704D;
 	border-radius: 0px;
 }
+
+.blog_button {
+	color: #000000;
+}
+
+.blog_button:hover {
+	color: #FFFFFF;
+}
